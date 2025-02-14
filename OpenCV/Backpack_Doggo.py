@@ -17,4 +17,7 @@ cv2.setMouseCallback('Dog', draw_circle)
 while True:
     cv2.imshow('Dog',img_resized)
     
-    if
+    if cv2.waitKey(20) & 0xff == 27:
+        break
+    
+cv2.destroyAllWindows()
