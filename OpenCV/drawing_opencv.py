@@ -20,4 +20,17 @@ def draw_rectangle(event,x,y,flags,params):
     
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
- 
+        cv2.rectangle(img,(x,y))
+    
+#####
+img = np.zeros((512,512,3))
+cv2.namedWindow(winname='my_drawing_2')
+cv2.setMouseCallback('my_drawing_2', draw_rectangle)
+
+while True:
+    cv2.imshow('my_drawing_2', img)
+    
+    if cv2.waitKey(20) & 0xff == 27:
+        break
+    
+cv2.destroyAllWindows()
