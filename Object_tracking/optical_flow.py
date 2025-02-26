@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-corner_tracking = dict(maxCorners = 1, qualityLevel = 0.3, minDistance = 7, blockSize = 7)
+corner_tracking = dict(maxCorners = 20, qualityLevel = 0.3, minDistance = 7, blockSize = 7)
 lk_params = dict(winSize=(200,200), maxLevel = 2, criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_EPS, 10,0.03))
 
 cap = cv2.VideoCapture(0)
