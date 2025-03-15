@@ -9,7 +9,10 @@ eye_cascade = cv2.CascadeClassifier(CASCADE_PATH)
 
 def eye_detection(img):
     eye_img = img.copy()
-    eye_rects = eye_cascade.detectMultiScale(eye_img)
+    eye_rects = eye_cascade.detectMultiScale(eye_img,scaleFactor=1.2,
+                                                minNeighbors=10,
+                                                minSize=(64,64),
+                                                flags=cv2.CASCADE_SCALE_IMAGE)
     
     for (x,y,w,h) in eye_rects:
         cv2.rectangle(eye_img, (x,y), (x+w, y+h), (255,255,255), 10)
